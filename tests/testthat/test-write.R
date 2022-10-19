@@ -3,6 +3,7 @@ library(scRNAseq)
 sce <- ZeiselBrainData()
 reducedDim(sce, "WHEE") <- matrix(runif(ncol(sce) * 10), ncol = 10)
 
+
 test_that("writeH5AD works as expected", {
     temp <- tempfile(fileext = ".h5ad")
     writeH5AD(sce, temp)
